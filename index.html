@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Event Locator App</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="bg-light sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">Event Locator</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/events.html">Events</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow-1">
+        <!-- Hero Section -->
+        <section class="hero-section text-center py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 mb-4">Find Amazing Events Near You</h1>
+                        <p class="lead mb-4">Discover concerts, workshops, sports events, and more in your city</p>
+                        
+                        <!-- Search Form -->
+                        <div class="search-container bg-light p-4 rounded shadow-sm">
+                            <form id="searchForm" class="row g-3" action="pages/events.html" method="GET">
+                                <!-- Search Bar -->
+                                <div class="col-12">
+                                    <input type="text" class="form-control form-control-lg" name="query" placeholder="Search events..." id="searchInput">
+                                </div>
+                                
+                                <!-- Filters -->
+                                <div class="col-md-4">
+                                    <select class="form-select form-select-lg" id="categoryFilter" name="category">
+                                        <option value="">All Categories</option>
+                                        <option value="music">Music</option>
+                                        <option value="sports">Sports</option>
+                                        <option value="arts">Arts</option>
+                                        <option value="technology">Technology</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <input type="date" class="form-control form-control-lg" id="dateFilter" name="date">
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">Search Events</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Events Section -->
+        <section class="container my-5">
+            <h2 class="text-center mb-4">Featured Events</h2>
+            <div class="row g-4" id="featuredEvents">
+                <!-- Sample Featured Events -->
+                <div class="col-md-4">
+                    <div class="card featured-event-card h-100 shadow-sm hover-card">
+                        <div class="card-img-wrapper">
+                            <img src="./assets/images/concert.jpg" class="card-img-top event-img" alt="Concert Event">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Music</span>
+                            <h5 class="card-title">Summer Music Festival</h5>
+                            <p class="card-text">Join us for an amazing night of live music featuring top artists.</p>
+                            <p class="text-muted"><i class="bi bi-calendar me-2"></i>March 15, 2025</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0">
+                            <a href="pages/event-details.html?id=1" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card featured-event-card h-100 shadow-sm hover-card">
+                        <div class="card-img-wrapper">
+                            <img src="./assets/images/sports.jpg" class="card-img-top event-img" alt="Sports Event">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Sports</span>
+                            <h5 class="card-title">City Marathon 2025</h5>
+                            <p class="card-text">Annual city marathon with prizes and entertainment.</p>
+                            <p class="text-muted"><i class="bi bi-calendar me-2"></i>March 20, 2025</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0">
+                            <a href="pages/event-details.html?id=2" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card featured-event-card h-100 shadow-sm hover-card">
+                        <div class="card-img-wrapper">
+                            <img src="./assets/images/tech.jpg" class="card-img-top event-img" alt="Tech Event">
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-info mb-2">Technology</span>
+                            <h5 class="card-title">Tech Innovation Summit</h5>
+                            <p class="card-text">Explore the latest innovations in technology and AI.</p>
+                            <p class="text-muted"><i class="bi bi-calendar me-2"></i>March 25, 2025</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0">
+                            <a href="pages/event-details.html?id=3" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Event Locator</h5>
+                    <p class="text-light">Find and join amazing events in your city.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="pages/events.html" class="text-light text-decoration-none">Events</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center text-light">
+                <small>&copy; 2025 Event Locator. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
